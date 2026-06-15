@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>맹자훤 포트폴리오</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/gallery.css">
 </head>
 <body>
 
@@ -156,19 +158,36 @@
     </div>
   </section>
 
-  <section id="gallery" class="section gallery">
-    <div class="section-inner">
-      <h2>GALLERY</h2>
-      <div class="gallery-grid">
-        <img src="images/gallery1.jpg" alt="갤러리 이미지 1">
-        <img src="images/gallery2.jpg" alt="갤러리 이미지 2">
-        <img src="images/gallery3.jpg" alt="갤러리 이미지 3">
-        <img src="images/gallery4.jpg" alt="갤러리 이미지 4">
-        <img src="images/gallery5.jpg" alt="갤러리 이미지 5">
-        <img src="images/gallery6.jpg" alt="갤러리 이미지 6">
+    <section class="gallery-board">
+      <div class="container">
+        <div class="filter-buttons">
+          <button type="button" class="active" data-filter="all">전체</button>
+          <button type="button" data-filter="food">주식</button>
+          <button type="button" data-filter="bread">빵</button>
+          <button type="button" data-filter="dessert">디저트</button>
+          <button type="button" data-filter="side">반찬</button>
+          <button type="button" data-filter="main">메인요리</button>
+        </div>
+
+
+        <div id="galleryList" class="gallery-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <button type="button" id="modalClose" class="modal-close">×</button>
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="">
+      <div class="modal-text">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
       </div>
     </div>
-  </section>
+  </div>
+
+  <script src="js/gallery-data.js"></script>
+  <script src="js/gallery.js"></script>
 
   <section id="contact" class="section contact">
     <div class="section-inner">
